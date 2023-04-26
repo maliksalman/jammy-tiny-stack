@@ -2,7 +2,7 @@ id = "io.buildpacks.stacks.jammy.tiny"
 homepage = "https://github.com/paketo-buildpacks/jammy-tiny-stack"
 maintainer = "Paketo Buildpacks"
 
-platforms = ["linux/amd64"]
+platforms = ["linux/arm64"]
 
 [build]
   description = "ubuntu:jammy with compilers and shell utilities"
@@ -13,9 +13,9 @@ platforms = ["linux/amd64"]
 
   [build.args]
     sources = """
-    deb http://archive.ubuntu.com/ubuntu jammy main universe multiverse
-    deb http://archive.ubuntu.com/ubuntu jammy-updates main universe multiverse
-    deb http://archive.ubuntu.com/ubuntu jammy-security main universe multiverse
+    deb http://ports.ubuntu.com/ubuntu-ports jammy main universe multiverse
+    deb http://ports.ubuntu.com/ubuntu-ports jammy-updates main universe multiverse
+    deb http://ports.ubuntu.com/ubuntu-ports jammy-security main universe multiverse
     """
 
     packages = """\
@@ -34,7 +34,7 @@ platforms = ["linux/amd64"]
     zlib1g-dev \
     """
 
-    architecture = "amd64"
+    architecture = "arm64"
 
 [run]
   description = "distroless-like jammy"
